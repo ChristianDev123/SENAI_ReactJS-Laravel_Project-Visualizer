@@ -1,44 +1,57 @@
 import LogoSenai from '../../Assets/img/LogoSenai.png';
 import { Grid } from "@mui/material";
-import { Box } from "@mui/system";
 import Image from "next/image";
-import ColorPallet from '../../../Styles/PaletaCores.json'
 
 export default function HeaderStatic(props){
-    const stylization = {
-        boxesFlex:{
-            display:"flex",
-            flexDirection:"column",
-            alignItems: "center",
-            justifyContent:"center",
-            textAlign:'justify',
-        }
-    }
-
     return(
         <>
             <Grid
                 container
-                style={{
-                    display:"flex",
-                    justifyContent:'space-between',
-                    padding:"30px 45px 0 45px"
+                sx={{
+                    justifyContent:"space-between",
+                    padding:"70px 45px 0 45px",
                 }}
             >
-                <Box style={stylization.boxesFlex}>
+                <Grid 
+                    item 
+                    xl={5}
+                    lg={5}
+                    md={6}
+                    sm={12}
+                    xs={12}
+                    textAlign="center"
+                >
                     <Image
                         src={LogoSenai}
                         unsized
                         alt="Logomarca Senai"
                     />
-                </Box>
-                <Box style={stylization.boxesFlex}>
+                </Grid>
+                <Grid 
+                    item 
+                    xl={5}
+                    lg={5}
+                    md={6}
+                    sm={12}
+                    xs={12}
+                    alignItems="center"
+                    justifyContent="center"
+                    textAlign="center"
+                    padding="15px"
+                >
                     <span>São Paulo - Santo Amaro</span>
                     <p>Suíço-Brasileira Paulo Ernesto Tolle</p>
-                </Box>
-                <Box>
+                </Grid>
+                <Grid 
+                    item 
+                    xl={2}
+                    lg={2}
+                    md={12}
+                    sm={12}
+                    xs={12}
+                >
                     {props.button}
-                </Box>
+                </Grid>
             </Grid>
             <style jsx>{`
                 span{

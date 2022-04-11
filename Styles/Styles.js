@@ -7,7 +7,7 @@ export default function GeralStyle(){
                 box-sizing:border-box;
                 font-family:"Times New Roman", Times, serif;
             }
-            html,body{
+            html,body,#root{
                 height:100%;
             }
         `}</style>

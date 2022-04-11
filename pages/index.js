@@ -38,8 +38,24 @@ export default function apresentationPage(){
         }
         p{
           font-size:55px;
-          padding:60px 0;
+          padding:50px 0;
         }
+        @media screen and (max-width:600px){
+          p{
+            padding:10px 0;
+          }
+        }
+        @media screen and (max-width:900px){
+          p{
+            padding:25px 0;
+          }
+        }
+        @media screen and (max-width:1200px){
+          p{
+            padding:40px 0;
+          }
+        }
+
       `}</style>
     </>
   );

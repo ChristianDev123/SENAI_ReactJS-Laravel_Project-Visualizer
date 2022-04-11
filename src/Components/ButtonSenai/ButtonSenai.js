@@ -1,10 +1,16 @@
 import PaletaCores from '../../../Styles/PaletaCores.json';
-export default function ButtonSenai(props){
+export default function ButtonSenai({roteamento, children, setState, newValueState}){
     return(
         <>
         <button onClick={()=>{
-            props.roteamento.push('/ListingPage');
-        }}>{props.children}</button>
+            if(roteamento != null){
+                roteamento.push('/ListingPage');
+            }
+            const changeState = setState;
+            if(typeof(changeState) == "function"){
+                changeState(newValueState);
+            }
+        }}>{children}</button>
         <style jsx>{`
             button{
                 width:100%;
