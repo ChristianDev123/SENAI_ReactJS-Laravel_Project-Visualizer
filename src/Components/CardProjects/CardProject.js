@@ -24,6 +24,12 @@ export default function CardProject({directionId, description, imageCard, destin
             onClick={()=>{
                 router.push(`/projectPage?searchPage=${destination}`)
             }}
+            sx={{
+                ":hover":{
+                    padding:"15px",
+                    transition:".7s"
+                }
+            }}
         >
         {directionId%2 == 0
         ?
