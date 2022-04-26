@@ -6,8 +6,8 @@ import Footer from "../src/Components/Footer/Footer";
 import HeaderFixedTop from '../src/Components/HeaderFixedTop/HeaderFixedTop';
 import { useState } from 'react';
 import ColorPallet from '../Styles/PaletaCores.json';
-import SenaiTeste from '../src/Assets/img/LogoSenai.png';
-import DogTeste from '../src/Assets/img/DogaoTeste.jpg';
+import SenaiTeste from '../src/assets/img/LogoSenai.png';
+import DogTeste from '../src/assets/img/DogaoTeste.jpg';
 
 export default function ListingPage(){
     const [typeProject, setTypeProject] = useState("project")

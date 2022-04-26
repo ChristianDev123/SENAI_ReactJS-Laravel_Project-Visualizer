@@ -3,7 +3,7 @@ import CardProject from '../src/Components/CardProjects/CardProject';
 import Footer from '../src/Components/Footer/Footer';
 import HeaderStatic from '../src/Components/Header/HeaderStatic';
 import HeaderFixedTop from '../src/Components/HeaderFixedTop/HeaderFixedTop';
-import SenaiLogo from '../src/Assets/img/LogoSenai.png';
+import SenaiLogo from '../src/assets/img/LogoSenai.png';
 import { useState } from 'react';
 import ContainerFluid from '../src/Components/ContainerFluid/ContainerFluid';
 import ColorPallet from '../Styles/PaletaCores.json';
