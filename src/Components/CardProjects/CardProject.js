@@ -44,6 +44,8 @@ export default function CardProject({directionId, description, imageCard, destin
             >
                 <Image
                     src={imageCard}
+                    responsive
+                    fill
                 />
                 {!underlineAll && <hr/>}
             </Grid>
