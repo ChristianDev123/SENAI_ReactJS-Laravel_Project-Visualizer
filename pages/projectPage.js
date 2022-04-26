@@ -1,11 +1,11 @@
 import {useRouter} from 'next/router';
-import CardProject from '../src/components/CardProjects/CardProject';
-import Footer from '../src/components/Footer/Footer';
-import HeaderStatic from '../src/components/Header/HeaderStatic';
-import HeaderFixedTop from '../src/components/HeaderFixedTop/HeaderFixedTop';
-import SenaiLogo from '../src/ssets/img/LogoSenai.png';
+import CardProject from '../src/Components/CardProjects/CardProject';
+import Footer from '../src/Components/Footer/Footer';
+import HeaderStatic from '../src/Components/Header/HeaderStatic';
+import HeaderFixedTop from '../src/Components/HeaderFixedTop/HeaderFixedTop';
+import SenaiLogo from '../src/Assets/img/LogoSenai.png';
 import { useState } from 'react';
-import ContainerFluid from '../src/components/ContainerFluid/ContainerFluid';
+import ContainerFluid from '../src/Components/ContainerFluid/ContainerFluid';
 import ColorPallet from '../Styles/PaletaCores.json';
 
 export default function ProjectPage(){
