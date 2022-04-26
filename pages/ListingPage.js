@@ -6,24 +6,24 @@ import Footer from "../src/Components/Footer/Footer";
 import HeaderFixedTop from '../src/Components/HeaderFixedTop/HeaderFixedTop';
 import { useState } from 'react';
 import ColorPallet from '../Styles/PaletaCores.json';
-import SenaiTeste from '../src/Assets/img/LogoSenai.png';
-import DogTeste from '../src/Assets/img/DogaoTeste.jpg';
+// import SenaiTeste from '../src/Assets/img/LogoSenai.png';
+// import DogTeste from '../src/Assets/img/DogaoTeste.jpg';
 
 export default function ListingPage(){
     const [typeProject, setTypeProject] = useState("project")
     const [projectData,setProjectData] = useState([
-        {id:0,image:SenaiTeste,descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
-        {id:1,image:SenaiTeste,descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
-        {id:2,image:SenaiTeste,descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
-        {id:3,image:SenaiTeste,descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
-        {id:4,image:SenaiTeste,descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"}
+        {id:0,image:'../src/Assets/img/LogoSenai.png',descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
+        {id:1,image:'../src/Assets/img/LogoSenai.png',descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
+        {id:2,image:'../src/Assets/img/LogoSenai.png',descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
+        {id:3,image:'../src/Assets/img/LogoSenai.png',descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"},
+        {id:4,image:'../src/Assets/img/LogoSenai.png',descriptionProject:'SenaiLogo Image',destination:"SenaiLogoPage"}
     ]);
     const [machineData,setMachineData] = useState([
-        {id:0,image:DogTeste,descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
-        {id:1,image:DogTeste,descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
-        {id:2,image:DogTeste,descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
-        {id:3,image:DogTeste,descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
-        {id:4,image:DogTeste,descriptionProject:'Dogao Machine Image',destination:"DogaoPage"}
+        {id:0,image:'../src/Assets/img/DogaoTeste.jpg',descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
+        {id:1,image:'../src/Assets/img/DogaoTeste.jpg',descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
+        {id:2,image:'../src/Assets/img/DogaoTeste.jpg',descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
+        {id:3,image:'../src/Assets/img/DogaoTeste.jpg',descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
+        {id:4,image:'../src/Assets/img/DogaoTeste.jpg',descriptionProject:'Dogao Machine Image',destination:"DogaoPage"}
     ]);
     const stylization = {
         btn:{
