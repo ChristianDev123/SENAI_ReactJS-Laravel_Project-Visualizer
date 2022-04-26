@@ -28,8 +28,7 @@ export default function ListingPage(){
     const stylization = {
         btn:{
             width:'12vw',
-            marginBottom: '15px',
-            padding:"10px 10px"
+            padding:"15px 15px"
         },
         boxCards:{
             marginBottom:"40px",
@@ -69,6 +68,7 @@ export default function ListingPage(){
                         </Grid>
                     </Grid>
                 }/>
+                <hr/>
             </header>
             <main>
                 <Grid 
@@ -139,6 +139,12 @@ export default function ListingPage(){
                     padding:10px 0;
                     color:${ColorPallet.white};
                 }
+                hr{
+                    width:100%;
+                    height:1.5px;
+                    background:${ColorPallet.primaryLineColor};
+                }
+
             `}</style>
         </>
     );

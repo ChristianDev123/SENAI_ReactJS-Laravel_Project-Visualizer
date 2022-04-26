@@ -1,9 +1,11 @@
-import { Box, Grid} from "@mui/material";
+import { Box, Grid, useMediaQuery} from "@mui/material";
 import Image from 'next/image'
 import { useRouter } from "next/router";
 import ColorPallet from '../../../Styles/PaletaCores.json'
-export default function CardProject({directionId, description, imageCard, destination}){
+
+export default function CardProject({directionId, description, imageCard, destination, underlineAll}){
     const router = useRouter();
+    const device = useMediaQuery('(min-width:900)');
     const stylization = {
         container:{
             width:"100%",
@@ -37,16 +39,13 @@ export default function CardProject({directionId, description, imageCard, destin
             <Grid
                 item
                 xs={12}
-                sm={12}
                 md={6}
-                lg={6}
-                xl={6}
                 textAlign="center"
             >
                 <Image
                     src={imageCard}
                 />
-                <hr/>
+                {!underlineAll && <hr/>}
             </Grid>
             <Grid
                 item
@@ -57,8 +56,13 @@ export default function CardProject({directionId, description, imageCard, destin
                 xl={6}
                 style={stylization.boxDescription}
             >
-                {description}
+                <p>{description}</p>
             </Grid>
+            {underlineAll &&
+                <Grid item xs={device?6:12} paddingX={10}>
+                    <hr/>
+                </Grid>
+            }
         </>    
         :
         <>
@@ -95,7 +99,6 @@ export default function CardProject({directionId, description, imageCard, destin
             hr{
                 background: ${ColorPallet.detailLine};
                 height:2px;
-
             }
         `}</style>
         </Grid>
