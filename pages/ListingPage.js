@@ -1,13 +1,13 @@
 import { Container, Grid } from "@mui/material";
-import ButtonSenai from '../src/Components/ButtonSenai/ButtonSenai';
-import CardProject from '../src/Components/CardProjects/CardProject';
-import HeaderStatic from "../src/Components/Header/HeaderStatic";
-import Footer from "../src/Components/Footer/Footer";
-import HeaderFixedTop from '../src/Components/HeaderFixedTop/HeaderFixedTop';
+import ButtonSenai from '../src/components/ButtonSenai/ButtonSenai';
+import CardProject from '../src/components/CardProjects/CardProject';
+import HeaderStatic from "../src/components/Header/HeaderStatic";
+import Footer from "../src/components/Footer/Footer";
+import HeaderFixedTop from '../src/components/HeaderFixedTop/HeaderFixedTop';
 import { useState } from 'react';
 import ColorPallet from '../Styles/PaletaCores.json';
-import SenaiTeste from '../src/assets/img/LogoSenai.png';
-import DogTeste from '../src/assets/img/DogaoTeste.jpg';
+import SenaiTeste from '../src/Assets/img/LogoSenai.png';
+import DogTeste from '../src/Assets/img/DogaoTeste.jpg';
 
 export default function ListingPage(){
     const [typeProject, setTypeProject] = useState("project")
