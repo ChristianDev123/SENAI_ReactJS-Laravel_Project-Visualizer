@@ -120,9 +120,7 @@ export default function ListingPage(){
                                     key={projects.id}
                                     directionId={projects.id}
                                     imageCard={projects.image}
-                                    description={
-                                        <p>{projects.descriptionProject.trim()}</p>
-                                    }
+                                    description={<p>{projects.descriptionProject.trim()}</p>}
                                     destination={projects.destination}
                                 />
                             </Container>

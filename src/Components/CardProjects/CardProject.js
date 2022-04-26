@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useRouter } from "next/router";
 import ColorPallet from '../../../Styles/PaletaCores.json'
 
-export default function CardProject({directionId, description, imageCard, destination, underlineAll}){
+export default function CardProject({directionId, description, imageCard, destination='', underlineAll}){
     const router = useRouter();
     const device = useMediaQuery('(min-width:900)');
     const stylization = {
@@ -24,7 +24,7 @@ export default function CardProject({directionId, description, imageCard, destin
             container
             styles={stylization.container}
             onClick={()=>{
-                router.push(`/projectPage?searchPage=${destination}`)
+                if(destination != '') router.push(`/projectPage?searchPage=${destination}`);
             }}
             sx={{
                 ":hover":{
@@ -74,6 +74,9 @@ export default function CardProject({directionId, description, imageCard, destin
                 lg={6}
                 xl={6}
                 style={stylization.boxDescription}
+                onClick={()=>{
+                    if(destination != '') router.push(`/projectPage?searchPage=${destination}`);
+                }}
             >
                 {description}
             </Grid>
