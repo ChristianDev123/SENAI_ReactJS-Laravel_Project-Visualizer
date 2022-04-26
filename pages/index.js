@@ -1,4 +1,4 @@
-import BiglogoSenai from '../src/assets/img/BigLogoSenai.svg'
+import BiglogoSenai from '../src/Assets/img/BigLogoSenai.svg'
 import { Container, Grid } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from 'next/router';
