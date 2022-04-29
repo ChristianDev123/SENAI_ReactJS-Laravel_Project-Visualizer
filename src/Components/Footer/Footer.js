@@ -1,5 +1,6 @@
-import { Box, Container, Grid } from "@mui/material";
-import PaletaCores from '../../../Styles/PaletaCores.json';
+import { Box, Grid } from "@mui/material";
+import ColorPallet from '../../Styles/PaletaCores.json';
+import { Line, School } from "./stylesHeader";
 
 export default function Footer(){
     return(
@@ -8,43 +9,29 @@ export default function Footer(){
         container
         flexDirection="column"
         sx={{
-            color:PaletaCores.white,
+            color:ColorPallet.white,
             textAlign:"center",
         }}
         >
-            <Box
-                style={{
-                        backgroundColor:PaletaCores.primaryFooter,
+            <Box style={{
+                        backgroundColor:ColorPallet.primaryFooter,
                         padding:'28px 0 0 0',
                 }}
             >
-                <span>Escola SENAI Suiço-Brasileira Paulo Ernesto Tolle</span>
+                <School>Escola SENAI Suiço-Brasileira Paulo Ernesto Tolle</School>
                 <p>Rua Bento Branco de Andrade Filho, 379 - Santo Amaro - São Paulo/SP - CEP 04757-000</p>
                 <p>Telefone: (11) 5642-3400 |E-mail:secretaria115@sp.senai.br</p>
-                <hr />
+                <Line />
             </Box>
-            <Box
-                style={{
-                        backgroundColor:PaletaCores.secundaryFooter,
+            <Box style={{
+                        backgroundColor:ColorPallet.secundaryFooter,
                         textAlign:"center"
-                    }}
+                }}
             >
                 <p>Copyright 2022 © Todos os direitos reservados.</p>
                 <p>O conteúdo do site não pode ser editado, copiado ou distribuído sem expressa autorização do SENAI-SP.</p>
             </Box>
         </Grid>
-        <style jsx>{`
-        span{
-            font-weight: bold; 
-        }
-        hr{
-            width:100%;
-            height:5px;
-            color:white;
-            background: white;
-            border:none;
-        }
-        `}</style>
         </>
     );
 }

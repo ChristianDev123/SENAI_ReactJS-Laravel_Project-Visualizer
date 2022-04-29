@@ -1,14 +1,23 @@
 import { Container, Grid } from "@mui/material";
-import ButtonSenai from '../src/Components/ButtonSenai/ButtonSenai';
-import CardProject from '../src/Components/CardProjects/CardProject';
-import HeaderStatic from "../src/Components/Header/HeaderStatic";
-import Footer from "../src/Components/Footer/Footer";
-import HeaderFixedTop from '../src/Components/HeaderFixedTop/HeaderFixedTop';
+import ButtonSenai from '../components/ButtonSenai/ButtonSenai';
+import CardProject from '../components/CardProjects/CardProject';
+import HeaderStatic from "../components/Header/HeaderStatic";
+import Footer from "../components/Footer/Footer";
+import HeaderFixedTop from '../components/HeaderFixedTop/HeaderFixedTop';
 import { useState } from 'react';
-import ColorPallet from '../Styles/PaletaCores.json';
-import SenaiTeste from '../src/Assets/img/LogoSenai.png';
-import DogTeste from '../src/Assets/img/dogaoTeste.jpg';
+import SenaiTeste from '../assets/img/LogoSenai.png';
+import DogTeste from '../assets/img/dogaoTeste.jpg';
+import { Line, TextButton } from "../Styles/StylesListingPage";
 
+const stylization = {
+    btn:{
+        width:'12vw',
+        padding:"15px 15px"
+    },
+    boxCards:{
+        marginBottom:"40px",
+    }
+}
 export default function ListingPage(){
     const [typeProject, setTypeProject] = useState("project")
     const [projectData,setProjectData] = useState([
@@ -25,50 +34,35 @@ export default function ListingPage(){
         {id:3,image:DogTeste,descriptionProject:'Dogao Machine Image',destination:"DogaoPage"},
         {id:4,image:DogTeste,descriptionProject:'Dogao Machine Image',destination:"DogaoPage"}
     ]);
-    const stylization = {
-        btn:{
-            width:'12vw',
-            padding:"15px 15px"
-        },
-        boxCards:{
-            marginBottom:"40px",
-        }
-    }
     return(
         <>
             <header>
                 <HeaderFixedTop />
                 <HeaderStatic button={
-                    <Grid container
-                        justifyContent="center"
-                    >
-                        <Grid 
+                    <Grid container justifyContent="center">
+                        <Grid item
                             sx={stylization.btn}
                             xs={6}
-                            sm={6}
                             md={4}
                             lg={12}
-                            xl={12}
                         >
-                            <ButtonSenai setState={setTypeProject} newValueState="project">
-                                <p className='txtbtn'>Projetos</p>
+                            <ButtonSenai changeState={setTypeProject} newValueState="project">
+                                <TextButton>Projetos</TextButton>
                             </ButtonSenai>
                         </Grid>
-                        <Grid 
+                        <Grid item
                             sx={stylization.btn}
                             xs={6}
-                            sm={6}
                             md={4}
                             lg={12}
-                            xl={12}
                         >
-                            <ButtonSenai setState={setTypeProject} newValueState="machine">
-                                <p className='txtbtn'>Maquinas</p>
+                            <ButtonSenai changeState={setTypeProject} newValueState="machine">
+                                <TextButton>Maquinas</TextButton>
                             </ButtonSenai>
                         </Grid>
                     </Grid>
                 }/>
-                <hr/>
+                <Line/>
             </header>
             <main>
                 <Grid 
@@ -84,27 +78,25 @@ export default function ListingPage(){
                     {typeProject === "project"
                     ?
                     projectData.map((projects)=>{
-                    return(
-                        <Container
-                            sx={{
-                                border:`2px solid #ccc`,
-                                borderRadius:"10px",
-                                marginTop:"20px",
-                                padding: "15px",
-                            }}
-                        >
-                            <CardProject 
+                        return(
+                            <Container
+                                sx={{
+                                    border:`2px solid #ccc`,
+                                    borderRadius:"10px",
+                                    marginTop:"20px",
+                                    padding: "15px",
+                                }}
                                 key={projects.id}
-                                directionId={projects.id}
-                                imageCard={projects.image}
-                                description={
-                                    <p>{projects.descriptionProject.trim()}</p>
-                                }
-                                destination={projects.destination}
-                            />
-                        </Container>
-                        
-                    )})
+                            >
+                                <CardProject 
+                                    directionId={projects.id}
+                                    imageCard={projects.image}
+                                    description={projects.descriptionProject.trim()}
+                                    destination={projects.destination}
+                                />
+                            </Container>
+                        )
+                    })
                     :
                     machineData.map((projects)=>{
                         return(
@@ -115,35 +107,23 @@ export default function ListingPage(){
                                     marginTop:"20px",
                                     padding: "15px",
                                 }}
+                                key={projects.id}
                             >
                                 <CardProject 
-                                    key={projects.id}
                                     directionId={projects.id}
                                     imageCard={projects.image}
-                                    description={<p>{projects.descriptionProject.trim()}</p>}
+                                    description={projects.descriptionProject.trim()}
                                     destination={projects.destination}
                                 />
                             </Container>
-                        )})
+                        )
+                    })
                     }
                 </Grid>
             </main>
             <footer>
                 <Footer />
             </footer>
-            <style jsx>{`
-                p.txtbtn{
-                    font-size:20px;
-                    padding:10px 0;
-                    color:${ColorPallet.white};
-                }
-                hr{
-                    width:100%;
-                    height:1.5px;
-                    background:${ColorPallet.primaryLineColor};
-                }
-
-            `}</style>
         </>
     );
 }
